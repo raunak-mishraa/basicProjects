@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- open source contribution for result pointing numbers and operators -->
+    <style>
+        body {
+            font-family: Arial;
+            background-color: rgb(0, 0, 0);
+        }
+        .calculator-button {
+            height: 60px;
+            width: 60px;
+            border-radius: 60px;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .js-result{
+            color: white;
+            font-size: 45px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .gray-button {
+            background-color: rgb(51, 51, 51);
+            color: white;
+}
+        .clear-button {
+             font-size: 17px;
+        }
+        .orange-button {
+             background-color: rgb(254, 160, 10);
+             color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p>Calculator</p> -->
+    <p class="js-result">0</p>
+    <p>
+    <button onclick="
+        calculator('1');
+        " class="gray-button calculator-button" >1</button>
+    <button onclick="
+        calculator('2');
+        " class="gray-button calculator-button" >2</button>
+    <button onclick="
+        calculator('3');
+        " class="gray-button calculator-button" >3</button>
+    <button onclick="
+    calculator(' + ');
+    " class="orange-button calculator-button" >+</button>
+  </p>
+  <p>
+    <button onclick="
+    calculator('4');
+    " class="gray-button calculator-button" >4</button>
+    <button onclick="
+    calculator('5');
+    " class="gray-button calculator-button" >5</button>
+    <button onclick="
+    calculator('6');
+    " class="gray-button calculator-button" >6</button>
+    <button onclick="
+    calculator(' - ');
+    " class="orange-button calculator-button" >-</button>
+</p>
+<p>
+    <button onclick="
+   calculator('7');
+    " class="gray-button calculator-button" >7</button>
+    <button onclick="
+    calculator('8');
+    " class="gray-button calculator-button" >8</button>
+    <button onclick="
+    calculator('9');
+    " class="gray-button calculator-button" >9</button>
+    <button onclick="
+    calculator(' * ');
+    " class="orange-button calculator-button" >*</button>
+</p>
+<p>
+    <button onclick="
+    calculator('0');
+    console.log(calculation);
+    " class="gray-button calculator-button" >0</button>
+    <button onclick="
+    calculator('.');
+    console.log(calculation);
+    " class="gray-button calculator-button" >.</button>
+    <button onclick="
+     calResult();
+    " class="gray-button calculator-button" >=</button>
+    <button onclick="
+    calculator(' / ');
+    " class="orange-button calculator-button" >/</button>
+</p>
+<p>
+    <button onclick="
+   calculation='';
+   document.querySelector('.js-result').innerHTML=calculation;
+    " class="gray-button calculator-button clear-button" >Clear</button>
+</p>
+    <script>
+        let calculation='';
+        function calculator(value){
+            calculation+=value;
+        document.querySelector('.js-result').innerHTML=calculation;
+        console.log(calculation);
+        }
+        function calResult(){
+            calculation=eval(calculation);
+            document.querySelector('.js-result').innerHTML=calculation;
+            console.log(calculation);
+        }
+    </script>
+</body>
+</html>
